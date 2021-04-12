@@ -6,8 +6,8 @@
 
 const char THING_ID[] = "aa9b7bf5-1d5a-49e6-b3cf-49497f6e0310";
 
-const char SSID[]     = Shadesmar //SECRET_SSID;Network SSID (name)
-const char PASS[]     = Zigge2000 //SECRET_PASS; Network password (use for WPA, or use as key for WEP)
+const char SSID[]     = 'Shadesmar'; //SECRET_SSID;Network SSID (name)
+const char PASS[]     = 'Zigge2000'; //SECRET_PASS; Network password (use for WPA, or use as key for WEP)
 
 
 CloudTemperature temperature;
