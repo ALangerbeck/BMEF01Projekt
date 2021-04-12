@@ -1,18 +1,19 @@
 
 // Include Libraries
 #include "Arduino.h"
-#include "DHT.h"
+#include <DHT.h>
 
 
 // Pin Definitions
-#define DHT_PIN_DATA	2
+#define DHTPIN  2
+#define DHTTYPE DHT22 
 
 
 
 // Global variables and defines
 
 // object initialization
-DHT dht(DHT_PIN_DATA);
+DHT dht(DHTPIN, DHTTYPE);
 
 
 // define vars for testing menu
@@ -44,7 +45,7 @@ void loop()
     // Reading humidity in %
     float dhtHumidity = dht.readHumidity();
     // Read temperature in Celsius, for Fahrenheit use .readTempF()
-    float dhtTempC = dht.readTempC();
+    float dhtTempC = dht.readTemperature();
     Serial.print(F("Humidity: ")); Serial.print(dhtHumidity); Serial.print(F(" [%]\t"));
     Serial.print(F("Temp: ")); Serial.print(dhtTempC); Serial.println(F(" [C]"));
 
