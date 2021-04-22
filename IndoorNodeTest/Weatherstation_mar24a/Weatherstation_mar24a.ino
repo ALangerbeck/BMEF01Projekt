@@ -22,6 +22,7 @@
 
 #define DHTPIN 2 
 #define DHTTYPE DHT22
+#define LED 3
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -54,13 +55,18 @@ void setup() {
   dht.begin();
   
   temperature = 0;
+  pinMode(LED,OUTPUT);
 }
 
 void loop() {
   Serial.print("New Loop");
   readTemp();
   UpdateData();
-  LowPower.sleep(60000);
+  for(int i =0;i<10;i++){
+    digitalWrite(LED,!(digitalRead(LED)));
+    delay(500);
+  }
+  //LowPower.sleep(60000);
   // Your code here 
   
   
