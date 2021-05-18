@@ -10,14 +10,14 @@ const char SSID[]     = SECRET_SSID;    // Network SSID (name)
 const char PASS[]     = SECRET_PASS;    // Network password (use for WPA, or use as key for WEP)
 
 
-CloudTemperature temperature;
-CloudRelativeHumidity humidity;
+float temperature;
+float humidity;
 
 void initProperties(){
 
   ArduinoCloud.setThingId(THING_ID);
-  ArduinoCloud.addProperty(temperature, READ, 1 * SECONDS, NULL);
-  ArduinoCloud.addProperty(humidity, READ, ON_CHANGE, NULL);
+  ArduinoCloud.addProperty(temperature, READ, 10 * SECONDS, NULL);
+  ArduinoCloud.addProperty(humidity, READ, 10 * SECONDS, NULL);
 
 }
 
